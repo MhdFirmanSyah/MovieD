@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .body {
+    @apply overflow-x-hidden;
+  }
+  *{
+    @apply transition-all
+  }
+}
+@layer components {
+   .nav-button-slider{
+    @apply cursor-pointer absolute h-16 w-10 color-base  z-50 mx-[3vw] top-[40%] bottom-[60%] flex items-center p-2 opacity-50 backdrop-brightness-100  hover:opacity-90 hover:scale-[1.05] hover:mx-[4vw] transition-all active:scale-[1]
+   }
+}
+@layer utilities {
+  .color-base{
+    @apply bg-gradient-to-t
+dark:from-black dark:to-cyan-950 from-aqua-light to-red-light
+  }
+  .humberger-long {
+    @apply bg-white rounded-xl w-3/4 h-1.5 group-hover:w-3/5 group-hover:bg-zinc-300 transition-all duration-300;
+  }
+  .humberger-set {
+    @apply bg-white rounded-xl w-3/5 h-1.5   group-hover:w-3/4 group-hover:bg-zinc-300 transition-all duration-150;
+  }
+  /* .nav-button-slider{
+    @apply cursor-pointer absolute h-16 w-10 color-base  z-50 mx-[3vw] top-[40%] bottom-[60%] flex items-center rounded-r-xl rounded-l-3xl p-2 opacity-50 backdrop-brightness-100 hover:shadow-[-13px_0_10px_-2px_rgba(255,255,255,1)] shadow-[-13px_0_10px_-2px_rgba(255,255,255,.5)] hover:opacity-90 hover:scale-[1.05] hover:mx-[4vw] transition-all active:scale-[1]
+  } */
+}
