@@ -2,60 +2,50 @@ import { Suspense, lazy } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import SliderGlimmer from "./SliderGlimmer"; // Import correctly
+import HeroSkeleton from "./../Skeleton Elements/HeroSkeleton";
 
-const LazySliderSec = lazy(() => import("./Slider")); // Correct import
+const ContentSlider = lazy(() => import("./Slider"));
 
-const HeroBanner = ({ movies, trending }) => {
+const HeroBanner = ({ trending }) => {
   if (!trending || trending.length === 0) {
-    return <SliderGlimmer />; // Return fallback if no trending movies
+    return <HeroSkeleton />;
   }
 
-  const PrevArrow = ({ onClick }) => (
+  const ArrowButton = ({ onClick, direction }) => (
     <button
-      className="nav-button-slider group-hover:shadow-[-13px_0_10px_-2px_rgba(255,255,255,1)] shadow-[-13px_0_10px_-2px_rgba(255,255,255,.5)] dark:hover:shadow-[-13px_0_10px_-2px_rgba(0,0,0,1)] dark:shadow-[-13px_0_10px_-2px_rgba(0,0,0,.5)] rounded-r-xl rounded-l-3xl left-0"
+      className={`nav-button-slider ${
+        direction === "prev"
+          ? "left-0 rounded-r-xl rounded-l-3xl"
+          : "right-0 rounded-l-xl rounded-r-3xl"
+      } hover:shadow-[13px_0_10px_-2px_rgba(255,255,255,1)] shadow-[13px_0_10px_-2px rgba(255,255,255,.5)] dark:hover:shadow-[13px_0_10px_-2px rgba(0,0,0,1)] dark:shadow-[13px_0_10px_-2px rgba(0,0,0,.5)]`}
       onClick={onClick}
     >
       <img
-        src="../../src/assets/image/prev-arrow.png"
-        alt="Previous"
-        className="m-auto"
-      />
-    </button>
-  );
-
-  const NextArrow = ({ onClick }) => (
-    <button
-      className="nav-button-slider hover:shadow-[13px_0_10px_-2px_rgba(255,255,255,1)] shadow-[13px_0_10px_-2px_rgba(255,255,255,.5)] dark:hover:shadow-[13px_0_10px_-2px_rgba(0,0,0,1)] dark:shadow-[13px_0_10px_-2px_rgba(0,0,0,.5)] rounded-l-xl rounded-r-3xl right-0"
-      onClick={onClick}
-    >
-      <img
-        src="../../src/assets/image/next-arrow.png"
-        alt="Next"
+        src={`../../src/assets/image/${direction}-arrow.png`}
+        alt={direction === "prev" ? "Previous" : "Next"}
         className="m-auto"
       />
     </button>
   );
 
   const settings = {
-    dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-    pauseOnHover: true, // Add pauseOnHover for a better user experience
+    autoplaySpeed: 5000,
+    prevArrow: <ArrowButton direction="prev" />,
+    nextArrow: <ArrowButton direction="next" />,
+    pauseOnHover: true,
   };
 
   return (
-    <Suspense fallback={<SliderGlimmer />}>
+    <Suspense fallback={<HeroSkeleton />}>
       <div className="relative">
         <Slider {...settings}>
           {trending.map((movie) => (
-            <LazySliderSec key={movie.id} movie={movie} />
+            <ContentSlider key={movie.id} movie={movie} />
           ))}
         </Slider>
       </div>

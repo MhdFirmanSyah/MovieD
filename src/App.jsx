@@ -13,14 +13,20 @@ function App() {
   const [trending, setTrending] = useState([]);
 
   useEffect(() => {
-    getDataTrending().then((res) => {
-      setTrending(res);
-    });
+    try {
+      getDataTrending().then((res) => {
+        setTrending(res);
+        console.log(res)
+      });
+    } catch(err){
+      console.log(err)
+    }
 
-    getDataMovies().then((result) => {
-      setMovies(result);
-    });
+    // getDataMovies().then((result) => {
+    //   setMovies(result);
+    // });
   }, []);
+
   return (
     <>
       <Router>

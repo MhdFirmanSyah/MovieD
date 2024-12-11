@@ -5,6 +5,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        movieprg: ["movieprg", "monospace"],
+      },
       colors: {
         "aqua-light": "#A0F1EA",
         "red-light": "#EAD6EE",
