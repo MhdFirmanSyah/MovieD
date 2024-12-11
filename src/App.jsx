@@ -16,10 +16,10 @@ function App() {
     try {
       getDataTrending().then((res) => {
         setTrending(res);
-        console.log(res)
+        console.log(res);
       });
-    } catch(err){
-      console.log(err)
+    } catch (err) {
+      console.log(err);
     }
 
     // getDataMovies().then((result) => {
