@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     try {
-      getDataTrending().then((res) => {
+      getDataTending().then((res) => {
         setTrending(res);
         console.log(res);
       });

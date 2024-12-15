@@ -1,16 +1,47 @@
-.slider-container {
+.shimmer {
+  color: rgba(255, 255, 255, 0);
+  /* box-shadow: red; */
+  /* animation: shimmer 1s infinite linear; */
+  /* background-color: #e90000; */
+  /* position: relative; */
+  background: #bfbfbf;
+}
+.loading {
+  position: relative;
+  background: #f6f6f6;
+}
+.loading::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-900px);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: loading 2s infinite;
+}
+@keyframes loading {
+  100% {
+    transform: translateX(100%);
+  }
+}
+/* .slider-container {
   display: flex;
-  background-color: #f9f9f9; /* Warna latar belakang, mirip YouTube */
   padding: 20px;
 }
 
 .poster-skeleton {
-  width: 150px;
+  width: 200px;
   height: 200px;
-  /* background-color: #6f6f6f; */
+  background-color: #6f6f6f;
   margin-right: 20px;
   border-radius: 8px;
-  animation: shimmer 500ms infinite linear;
 }
 
 .info-container {
@@ -20,28 +51,28 @@
 .title-skeleton {
   width: 300px;
   height: 20px;
-  /* background-color: #6f6f6f; */
+  background-color: #6f6f6f;
   margin-bottom: 10px;
   border-radius: 4px;
-  animation: shimmer 500ms infinite linear;
+  animation: shimmer 5s infinite linear;
 }
 
 .overview-skeleton {
   width: 100%;
   height: 80px;
-  /* background-color: #6f6f6f; */
+  background-color: #6f6f6f;
   margin-bottom: 10px;
   border-radius: 4px;
-  animation: shimmer 500ms infinite linear;
+  animation: shimmer 5s infinite linear;
 }
 
 .details-skeleton .detail-item {
   width: 100px;
   height: 15px;
-  /* background-color: #6f6f6f; */
+  background-color: #6f6f6f;
   margin-bottom: 5px;
   border-radius: 4px;
-  animation: shimmer 500ms infinite linear;
+  animation: shimmer 5s infinite linear;
 }
 
 .rating-skeleton {
@@ -52,27 +83,27 @@
 .rating-bar {
   width: 80px;
   height: 15px;
-  /* background-color: #6f6f6f; */
+  background-color: #6f6f6f;
   border-radius: 4px;
-  animation: shimmer 500ms infinite linear;
+  animation: shimmer 5s infinite linear;
   margin-right: 10px;
 }
 
 .info-icon {
   width: 20px;
   height: 20px;
-  /* background-color: #6f6f6f; */
+  background-color: #6f6f6f;
   border-radius: 50%;
-  animation: shimmer 500ms infinite linear;
-}
+  animation: shimmer 5s infinite linear;
+} */
 
 @keyframes shimmer {
   0% {
-    background-color: #d1d1d1;
-    background-position: -1000px 0;
+    /* background-color: #d1d1d1; */
+    background-position: -100px 0;
   }
   100% {
-    background-color: #131313;
-    background-position: 1000px 0;
+    /* background-color: #131313; */
+    background-position: 100px 0;
   }
 }

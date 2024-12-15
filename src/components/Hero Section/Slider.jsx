@@ -23,16 +23,18 @@ const SliderSec = ({ movie }) => {
   return (
     <>
       <div
-        className="bg-white dark:bg-black z-0 justify-center backdrop-opacity-60 w-full h-96 md:h-[25rem] lg:h-[500px] xl:h-[600px] 2xl:h-[700px] flex relative bg-cover bg-center sm:justify-normal"
+        className="bg-white dark:bg-black z-0 justify-center backdrop-opacity-60 w-full h-96 md:h-[25rem] lg:h-[500px] xl:h-[580px] 2xl:h-[700px] flex relative bg-cover bg-center sm:justify-normal"
         style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/${resolutionBackdrop}/${movie.backdrop_path})`,
+          backgroundImage: "url(src/assets/imgdevstage/backdrop.jpg)",
+          // backgroundImage: `url(https://image.tmdb.org/t/p/${resolutionBackdrop}/${movie.backdrop_path})`,
         }}
       >
         {/*poster*/}
         {/*title and rating*/}
         <img
           className="h-52 lg:h-[20rem] xl:h-[22rem] 2xl:h-[30rem] m-auto justify-self-center bottom-[17vw] sm:bottom-0 sm:h-[15rem] sm:m-[10vw] md:h-[18rem] md:my-auto lg:m-auto lg:ml-[12vw] drop-shadow-[5px_5px_10px_rgba(0,0,0,1)] dark:shadow-black hover:z-50 hover:scale-110 hover:bottom-[17vw] sm:hover:bottom-0 transition-all"
-          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          // src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          src="src/assets/imgdevstage/poster.jpg"
           alt="Backdrop"
         />
         <div className="container m-auto text-white absolute sm:bottom-[10vw] bottom-[5vw] md:bottom-[5vw] xl:bottom-[9vw] 2xl:bottom-[6vw] lg:bottom-[8vw] xl:m-auto sm:left-[37vw] md:left-[20rem] 2xl:left-[42rem] lg:left-[25rem] xl:left-[30rem] justify-center items-center content-center sm:content-start sm:items-start sm:justify-start mx-auto flex flex-col gap-2 md:gap-3">

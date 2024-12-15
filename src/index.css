@@ -59,6 +59,9 @@
   }
 }
 @layer components {
+  .side-about-skeleton {
+    @apply z-50 py-1 px-3 rounded-lg m-auto sm:m-0 content-center justify-center gap-2 items-center uppercase md:text-lg lg:text-xl 2xl:text-[2rem];
+  }
   .side-about {
     @apply z-50 py-1 px-3 rounded-lg m-auto sm:m-0 content-center justify-center gap-2 items-center backdrop-blur-lg bg-white/25 dark:bg-black/25 drop-shadow-[-5px_-5px_3px_rgba(0,0,0,1)] w-20 text-center uppercase md:text-lg lg:text-xl 2xl:text-[2rem];
   }

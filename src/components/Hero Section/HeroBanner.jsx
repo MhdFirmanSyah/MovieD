@@ -33,7 +33,7 @@ const HeroBanner = ({ trending }) => {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 5000,
     prevArrow: <ArrowButton direction="prev" />,
     nextArrow: <ArrowButton direction="next" />,
@@ -42,7 +42,8 @@ const HeroBanner = ({ trending }) => {
 
   return (
     <Suspense fallback={<HeroSkeleton />}>
-      <div className="relative">
+      <div className="relative before:h-10 before:w-full before:bg-white before:z-50">
+        <span className="bg-gradient-to-b from-white to-black z-50 h-10 w-full "></span>
         <Slider {...settings}>
           {trending.map((movie) => (
             <ContentSlider key={movie.id} movie={movie} />
