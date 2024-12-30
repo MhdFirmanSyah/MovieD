@@ -6,8 +6,8 @@ const SliderSec = ({ movie }) => {
   const [isPosterLoaded, setIsPosterLoaded] = useState(false);
   const [isOpenInfo, setOpenInfo] = useState(false);
   const [isOpenRating, setRatingOpen] = useState(false);
-
-  const resolutionBackdrop = "w500";
+  // console.log(movie);
+  const resolutionBackdrop = "original";
   const resolutionPoster = "w500";
   useEffect(() => {
     const backdropImg = new Image();
@@ -23,29 +23,29 @@ const SliderSec = ({ movie }) => {
   return (
     <>
       <div
-        className="bg-white dark:bg-black z-0 justify-center backdrop-opacity-60 w-full h-96 md:h-[25rem] lg:h-[500px] xl:h-[580px] 2xl:h-[700px] flex relative bg-cover bg-center sm:justify-normal"
+        className="bg-white  dark:bg-black justify-center backdrop-opacity-60 w-full h-96 md:h-[25rem] lg:h-[500px] xl:h-[580px] 2xl:h-[700px] flex relative bg-cover bg-center sm:justify-normal"
         style={{
-          backgroundImage: "url(src/assets/imgdevstage/backdrop.jpg)",
-          // backgroundImage: `url(https://image.tmdb.org/t/p/${resolutionBackdrop}/${movie.backdrop_path})`,
+          // backgroundImage: "url(src/assets/imgdevstage/backdrop.jpg)",
+          backgroundImage: `url(https://image.tmdb.org/t/p/${resolutionBackdrop}/${movie.backdrop_path})`,
         }}
       >
         {/*poster*/}
         {/*title and rating*/}
         <img
-          className="h-52 lg:h-[20rem] xl:h-[22rem] 2xl:h-[30rem] m-auto justify-self-center bottom-[17vw] sm:bottom-0 sm:h-[15rem] sm:m-[10vw] md:h-[18rem] md:my-auto lg:m-auto lg:ml-[12vw] drop-shadow-[5px_5px_10px_rgba(0,0,0,1)] dark:shadow-black hover:z-50 hover:scale-110 hover:bottom-[17vw] sm:hover:bottom-0 transition-all"
-          // src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-          src="src/assets/imgdevstage/poster.jpg"
+          className="h-52 lg:h-[20rem] xl:h-[22rem] 2xl:h-[30rem] m-auto justify-self-center bottom-[17vw] sm:bottom-0 sm:h-[15rem] sm:m-[10vw] md:h-[18rem] md:my-auto lg:m-auto lg:ml-[12vw] drop-shadow-[5px_5px_10px_rgba(0,0,0,1)] dark:shadow-black hover:z-10 hover:scale-110 hover:bottom-[17vw] sm:hover:bottom-0 transition-all rounded"
+          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          // src="src/assets/imgdevstage/poster.jpg"
           alt="Backdrop"
         />
         <div className="container m-auto text-white absolute sm:bottom-[10vw] bottom-[5vw] md:bottom-[5vw] xl:bottom-[9vw] 2xl:bottom-[6vw] lg:bottom-[8vw] xl:m-auto sm:left-[37vw] md:left-[20rem] 2xl:left-[42rem] lg:left-[25rem] xl:left-[30rem] justify-center items-center content-center sm:content-start sm:items-start sm:justify-start mx-auto flex flex-col gap-2 md:gap-3">
           {/*title*/}
-          <h1 className="text-[1.2rem] xl:text-[2rem] max-w-[80%] sm:max-w-[50%] md:max-w-[45%] drop-shadow-[-5px_-5px_3px_rgba(0,0,0,1)] font-black z-50 mb-[2.5vw] sm:mb-1 w-max px-3 rounded-full backdrop-blur-sm sm:text-[1.7rem] 2xl:text-[4rem]">
+          <h1 className="text-[1.2rem] xl:text-[2rem] max-w-[80%] sm:max-w-[50%] md:max-w-[45%] drop-shadow-[-5px_-5px_3px_rgba(0,0,0,1)] font-black z-10 mb-[2.5vw] sm:mb-1 w-max px-3 rounded-full backdrop-blur-sm sm:text-[1.7rem] 2xl:text-[4rem]">
             {movie.name ?? movie.title}
           </h1>
           {isOpenInfo && <Overview movie={movie} />}
 
           {/*rating and info*/}
-          <section className="flex z-50 gap-2 sm:flex-col flex-row">
+          <section className="flex z-10 gap-2 sm:flex-col flex-row">
             <div className="hidden sm:block">
               <span className="side-about">{movie.media_type}</span>
               <span className="side-about">
@@ -58,12 +58,12 @@ const SliderSec = ({ movie }) => {
               {movie.first_air_date ?? movie.release_date}
             </span>
             <div
-              className={`flex flex-row w-max py-1 px-3 rounded-lg m-auto sm:m-0 content-center justify-center gap-2 items-center backdrop-blur-lg bg-white/25 dark:bg-black/25 drop-shadow-[-5px_-5px_3px_rgba(0,0,0,1)] z-50 ${
+              className={`flex flex-row w-max py-1 px-3 rounded-lg m-auto sm:m-0 content-center justify-center gap-2 items-center backdrop-blur-lg bg-white/25 dark:bg-black/25 drop-shadow-[-5px_-5px_3px_rgba(0,0,0,1)] z-10 ${
                 isOpenRating ? "open-rating" : ""
               }`}
             >
               {isOpenRating && (
-                <span className="absolute z-50 top-[-27px] text-[12px] dark:text-white text-black">
+                <span className="absolute z-10 top-[-27px] text-[12px] dark:text-white text-black">
                   {parseFloat(movie.vote_average.toFixed(1))}
                 </span>
               )}

@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {
-  getDataMovies,
-  searchMovie,
+  // getDataMovies,
+  // searchMovie,
   getDataTrending,
 } from "./utils/moviesData";
 import NotFound from "./pages/Notfound";
@@ -14,17 +14,13 @@ function App() {
 
   useEffect(() => {
     try {
-      getDataTending().then((res) => {
+      getDataTrending().then((res) => {
         setTrending(res);
-        console.log(res);
+        // console.log(res);
       });
     } catch (err) {
       console.log(err);
     }
-
-    // getDataMovies().then((result) => {
-    //   setMovies(result);
-    // });
   }, []);
 
   return (

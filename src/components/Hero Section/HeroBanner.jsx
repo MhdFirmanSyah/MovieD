@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -7,9 +7,24 @@ import HeroSkeleton from "./../Skeleton Elements/HeroSkeleton";
 const ContentSlider = lazy(() => import("./Slider"));
 
 const HeroBanner = ({ trending }) => {
-  if (!trending || trending.length === 0) {
-    return <HeroSkeleton />;
+  const [trend, setTrend] = useState([]); // Inisialisasi dengan array kosong
+  const [isLoading, setIsLoading] = useState(true); // Tambahkan state loading
+
+  useEffect(() => {
+    setIsLoading(true); // Mulai loading
+    if (trending && trending.length > 0) {
+      setTrend(trending.slice(0, 8));
+      setIsLoading(false); // Akhiri loading
+    }
+  }, [trending]);
+
+  if (isLoading) {
+    return <HeroSkeleton />; // Tampilkan loading saat data belum siap
   }
+
+  // if (!trend || trend.length === 0) {
+  //   return <div>Tidak ada data trending.</div>; // Pesan error yang lebih informatif
+  // }
 
   const ArrowButton = ({ onClick, direction }) => (
     <button
@@ -21,7 +36,7 @@ const HeroBanner = ({ trending }) => {
       onClick={onClick}
     >
       <img
-        src={`../../src/assets/image/${direction}-arrow.png`}
+        src={`src/assets/image/${direction}-arrow.png`}
         alt={direction === "prev" ? "Previous" : "Next"}
         className="m-auto"
       />
@@ -33,8 +48,8 @@ const HeroBanner = ({ trending }) => {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
-    autoplaySpeed: 5000,
+    autoplay: true,
+    autoplaySpeed: 7000,
     prevArrow: <ArrowButton direction="prev" />,
     nextArrow: <ArrowButton direction="next" />,
     pauseOnHover: true,
@@ -42,10 +57,9 @@ const HeroBanner = ({ trending }) => {
 
   return (
     <Suspense fallback={<HeroSkeleton />}>
-      <div className="relative before:h-10 before:w-full before:bg-white before:z-50">
-        <span className="bg-gradient-to-b from-white to-black z-50 h-10 w-full "></span>
+      <div className=" h-full w-full fixed mt-14 sm:mt-[3.7rem] md:mt-[4rem] lg:mt-[5rem] bg-white dark:bg-black ">
         <Slider {...settings}>
-          {trending.map((movie) => (
+          {trend.map((movie) => (
             <ContentSlider key={movie.id} movie={movie} />
           ))}
         </Slider>
