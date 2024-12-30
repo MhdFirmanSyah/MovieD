@@ -12,7 +12,7 @@ const Home = ({ movies, trending }) => {
         <PopularSection />
       </BottomSection>
       <div
-        className="border bottom-0 absolute h-6 w-full opacity-40 shadow-xl shadow-white rounded-md bg-black my-7 mb-0 text-center uppercase font-extrabold text-white after:content-['normal/default']
+        className="border top-0 z-[9999999] fixed h-6 w-full opacity-5  rounded-md bg-blackmb-0 text-center uppercase font-extrabold text-white after:content-['normal/default']sssss
       sm:bg-green-700 sm:after:content-['sm/small-up-660px']
       md:bg-blue-500 md:after:content-['md/medium-up-768px']
       lg:bg-violet-600 lg:after:content-['lg/large-up-1024px']

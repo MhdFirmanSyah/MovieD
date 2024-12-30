@@ -19,7 +19,11 @@ const HeroBanner = ({ trending }) => {
   }, [trending]);
 
   if (isLoading) {
-    return <HeroSkeleton />; // Tampilkan loading saat data belum siap
+    return (
+      <div className=" h-full w-full fixed mt-14 sm:mt-[3.7rem] md:mt-[4rem] lg:mt-[5rem] bg-white dark:bg-black ">
+        <HeroSkeleton />
+      </div>
+    );
   }
 
   // if (!trend || trend.length === 0) {
@@ -56,15 +60,15 @@ const HeroBanner = ({ trending }) => {
   };
 
   return (
-    <Suspense fallback={<HeroSkeleton />}>
-      <div className=" h-full w-full fixed mt-14 sm:mt-[3.7rem] md:mt-[4rem] lg:mt-[5rem] bg-white dark:bg-black ">
-        <Slider {...settings}>
-          {trend.map((movie) => (
-            <ContentSlider key={movie.id} movie={movie} />
-          ))}
-        </Slider>
-      </div>
-    </Suspense>
+    <div className=" h-full w-full fixed mt-14 sm:mt-[3.7rem] md:mt-[4rem] lg:mt-[5rem] bg-white dark:bg-black ">
+      {/* <Suspense fallback={<HeroSkeleton />}> */}
+      <Slider {...settings}>
+        {trend.map((movie) => (
+          <ContentSlider key={movie.id} movie={movie} />
+        ))}
+      </Slider>
+      {/* </Suspense> */}
+    </div>
   );
 };
 

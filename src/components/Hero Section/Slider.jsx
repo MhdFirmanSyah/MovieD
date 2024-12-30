@@ -23,7 +23,7 @@ const SliderSec = ({ movie }) => {
   return (
     <>
       <div
-        className="bg-white  dark:bg-black justify-center backdrop-opacity-60 w-full h-96 md:h-[25rem] lg:h-[500px] xl:h-[580px] 2xl:h-[700px] flex relative bg-cover bg-center sm:justify-normal"
+        className="bg-white   dark:bg-black justify-center backdrop-opacity-60 w-full h-96 md:h-[25rem] lg:h-[500px] xl:h-[580px] 2xl:h-[700px] flex relative bg-cover bg-center sm:justify-normal"
         style={{
           // backgroundImage: "url(src/assets/imgdevstage/backdrop.jpg)",
           backgroundImage: `url(https://image.tmdb.org/t/p/${resolutionBackdrop}/${movie.backdrop_path})`,
@@ -46,9 +46,9 @@ const SliderSec = ({ movie }) => {
 
           {/*rating and info*/}
           <section className="flex z-10 gap-2 sm:flex-col flex-row">
-            <div className="hidden sm:block">
-              <span className="side-about">{movie.media_type}</span>
-              <span className="side-about">
+            <div className="hidden sm:flex">
+              <span className="side-about w-fit mr-2">{movie.media_type}</span>
+              <span className="side-about w-max ">
                 {movie.first_air_date ?? movie.release_date}
               </span>
             </div>

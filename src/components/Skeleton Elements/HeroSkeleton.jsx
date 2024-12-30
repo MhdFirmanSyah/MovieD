@@ -9,7 +9,7 @@ const SliderGlimmer = () => {
 
   return (
     // container
-    <div className="slider-container loading bg-[#ffff] dark:bg-[#000000]  justify-center w-full h-96 md:h-[25rem] lg:h-[500px] xl:h-[580px] 2xl:h-[700px] flex relative  bg-center sm:justify-normal">
+    <div className="slider-container loading bg-[#ffff] dark:bg-[#000000]  justify-center w-full h-96 md:h-[25rem] lg:h-[500px] xl:h-[580px] 2xl:h-[700px] flex fixed  bg-center sm:justify-normal">
       {/* img/poster */}
       <div className="poster-skeleton  shimmer size-[9rem] sm:size-[9.6rem] md:size-[11rem] lg:size-[13rem] xl:size-[15rem] 2xl:size-[20rem] h-52 lg:h-[20rem] xl:h-[22rem] 2xl:h-[30rem] m-auto justify-self-center bottom-[17vw] sm:bottom-0 sm:h-[15rem] sm:m-[10vw] md:h-[18rem] md:my-auto lg:m-auto lg:ml-[12vw] z-50 rounded-md"></div>
       {/* info, title, rating */}
@@ -21,7 +21,7 @@ const SliderGlimmer = () => {
 
         <section className="overview-skeleton flex z-50 gap-2 sm:flex-col flex-row">
           <div className="details-skeleton hidden sm:block">
-            <span className="detail-item  side-about-skeleton shadow-none shimmer">
+            <span className="detail-item mr-2  side-about-skeleton shadow-none shimmer">
               Rating
             </span>
             <span className="detail-item side-about-skeleton  shadow-none shimmer">
