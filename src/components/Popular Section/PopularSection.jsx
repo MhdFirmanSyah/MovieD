@@ -7,3 +7,4 @@ const PopularSection = () => {
 };
 
 export default PopularSection;
+ 
