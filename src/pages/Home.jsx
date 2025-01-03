@@ -10,6 +10,7 @@ const Home = ({ movies, trending }) => {
       <HeroBanner movies={movies} trending={trending} />
       <BottomSection>
         <PopularSection />
+        <PopularSection />
       </BottomSection>
       <div
         className="border top-0 z-[9999999] fixed h-6 w-full opacity-5  rounded-md bg-blackmb-0 text-center uppercase font-extrabold text-white after:content-['normal/default']sssss

@@ -1,0 +1,13 @@
+user.name=Muhammad Firmansyah
+user.email=mhdfirmansyah748@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/MhdFirmanSyah/MovieD.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+branch.main.vscode-merge-base=origin/main
+gui.wmstate=normal
+gui.geometry=809x387+156+156 167 174

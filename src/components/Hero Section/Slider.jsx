@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Ratings from "./Ratings";
+import Genre from "./Genre";
 
 const SliderSec = ({ movie }) => {
   const [isBackDropLoaded, setIsBackDropLoaded] = useState(false);
@@ -43,7 +44,12 @@ const SliderSec = ({ movie }) => {
             {movie.name ?? movie.title}
           </h1>
           {isOpenInfo && <Overview movie={movie} />}
-
+          {/* genre */}
+          {/* <div className="flex flex-row gap-4 bg-blur">
+            {movie.genre_ids.map((id) => (
+              <Genre key={id} id={id} />
+            ))}
+          </div> */}
           {/*rating and info*/}
           <section className="flex z-10 gap-2 sm:flex-col flex-row">
             <div className="hidden sm:flex">
@@ -57,27 +63,36 @@ const SliderSec = ({ movie }) => {
             <span className="side-about sm:hidden order-last">
               {movie.first_air_date ?? movie.release_date}
             </span>
-            <div
-              className={`flex flex-row w-max py-1 px-3 rounded-lg m-auto sm:m-0 content-center justify-center gap-2 items-center backdrop-blur-lg bg-white/25 dark:bg-black/25 drop-shadow-[-5px_-5px_3px_rgba(0,0,0,1)] z-10 ${
-                isOpenRating ? "open-rating" : ""
-              }`}
-            >
-              {isOpenRating && (
-                <span className="absolute z-10 top-[-27px] text-[12px] dark:text-white text-black">
-                  {parseFloat(movie.vote_average.toFixed(1))}
-                </span>
-              )}
-              <Ratings
-                setRatingOpen={setRatingOpen}
-                rating={movie.vote_average}
-              />
-              <img
-                onClick={() => setOpenInfo(!isOpenInfo)}
-                className="drop-shadow-[0_0_5px_rgba(0,0,0,1)] dark:drop-shadow-[0_0_5px_rgba(255,255,255,1)] w-[20px] cursor-pointer hover:scale-105"
-                src="../../src/assets/image/info.png"
-                alt=""
-              />
-            </div>
+            <section className="flex flex-col gap-3">
+              <div className="hidden sm:flex flex-row justify-center rounded-md p-1 gap-4 backdrop-blur-sm ">
+                {movie.genre_ids.map((id) => (
+                  <Genre key={id} id={id} />
+                ))}
+              </div>
+
+              <div
+                className={`flex flex-row w-max py-1 px-3 rounded-lg m-auto sm:m-0 content-center justify-center gap-2 items-center backdrop-blur-lg bg-white/25 dark:bg-black/25 drop-shadow-[-5px_-5px_3px_rgba(0,0,0,1)] z-10 ${
+                  isOpenRating ? "open-rating" : ""
+                }`}
+              >
+                {isOpenRating && (
+                  <span className="absolute z-20 top-[-27px] text-[12px] dark:text-white text-black ">
+                    {parseFloat(movie.vote_average.toFixed(1))}
+                  </span>
+                )}
+
+                <Ratings
+                  setRatingOpen={setRatingOpen}
+                  rating={movie.vote_average}
+                />
+                <img
+                  onClick={() => setOpenInfo(!isOpenInfo)}
+                  className="drop-shadow-[0_0_5px_rgba(0,0,0,1)] dark:drop-shadow-[0_0_5px_rgba(255,255,255,1)] w-[20px] cursor-pointer hover:scale-105"
+                  src="../../src/assets/image/info.png"
+                  alt=""
+                />
+              </div>
+            </section>
           </section>
         </div>
       </div>
@@ -88,6 +103,12 @@ const SliderSec = ({ movie }) => {
 const Overview = ({ movie }) => {
   return (
     <div className="overviewscrollbar sm:m-0 z-10  sm:block bg-white/25  w-1/2 m-auto bottom-[10vw] xl:text-lg 2xl:text-2xl  p-4 rounded-md backdrop-blur-2xl text-justify overflow-auto max-h-[30vw] md:max-h-[20rem] sm:max-h-[20vw] shadow-2xl shadow-black">
+      <div className="flex sm:hidden flex-row justify-evenly rounded-md py-2   backdrop-blur-sm  max-w-full flex-wrap gap-y-2">
+        {movie.genre_ids.map((id) => (
+          <Genre key={id} id={id} />
+        ))}
+      </div>
+
       <p>{`${movie.overview}`}</p>
     </div>
   );

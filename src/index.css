@@ -72,7 +72,7 @@
     @apply cursor-pointer absolute h-16 w-10 color-base  z-40 mx-[3vw] top-[40%] bottom-[60%] flex items-center p-2 opacity-50 backdrop-brightness-100  hover:opacity-90 hover:scale-[1.05] hover:mx-[4vw] transition-all active:scale-[1];
   }
   .open-rating {
-    @apply before:w-6 before:h-6 before:shadow-[0_0_5px_rgba(255,255,255,1)] before:z-50 before:dark:bg-black before:bg-white before:absolute before:top-[-30px] before:rounded-t-full before:rounded-bl-full before:rotate-45 z-50;
+    @apply before:w-6 before:h-6 before:shadow-[0_0_5px_rgba(255,255,255,1)] before:z-10 before:dark:bg-black before:bg-white before:absolute before:top-[-30px] before:rounded-t-full before:rounded-bl-full before:rotate-45 z-50;
   }
 }
 @layer utilities {
@@ -80,9 +80,16 @@
     @apply bg-gradient-to-t
 dark:from-black dark:to-cyan-950 from-aqua-light to-red-light;
   }
+  .color-base-reverse {
+    @apply bg-gradient-to-b
+dark:from-black dark:to-cyan-950 from-aqua-light to-red-light;
+  }
   .color-base-blur-reverse {
     @apply bg-gradient-to-t
 dark:from-cyan-950/70 dark:to-black/70 from-red-light/70 to-aqua-light/70;
+  }
+  .main-color {
+    @apply bg-white dark:bg-black;
   }
   .humberger-long {
     @apply bg-white rounded-xl w-3/4 h-1.5 group-hover:w-3/5 group-hover:bg-zinc-300 transition-all duration-300;
