@@ -33,7 +33,7 @@ const SliderSec = ({ movie }) => {
         {/*poster*/}
         {/*title and rating*/}
         <img
-          className="h-52 lg:h-[20rem] xl:h-[22rem] 2xl:h-[30rem] m-auto justify-self-center bottom-[17vw] sm:bottom-0 sm:h-[15rem] sm:m-[10vw] md:h-[18rem] md:my-auto lg:m-auto lg:ml-[12vw] drop-shadow-[5px_5px_10px_rgba(0,0,0,1)] dark:shadow-black hover:z-10 hover:scale-110 hover:bottom-[17vw] sm:hover:bottom-0 transition-all rounded"
+          className="h-52 lg:h-[20rem] xl:h-[22rem] 2xl:h-[30rem] m-auto justify-self-center bottom-[17vw] sm:bottom-0 sm:h-[15rem] sm:m-[10vw] md:h-[18rem] md:my-auto lg:m-auto lg:ml-[12vw] drop-shadow-[5px_5px_10px_rgba(0,0,0,1)] dark:shadow-black hover:shadow-2xl hover:z-10 hover:scale-110 hover:bottom-[17vw] sm:hover:bottom-0 transition-all rounded"
           src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
           // src="src/assets/imgdevstage/poster.jpg"
           alt="Backdrop"
@@ -64,7 +64,8 @@ const SliderSec = ({ movie }) => {
               {movie.first_air_date ?? movie.release_date}
             </span>
             <section className="flex flex-col gap-3">
-              <div className="hidden sm:flex flex-row justify-center rounded-md p-1 gap-4 backdrop-blur-sm ">
+              {/* genre */}
+              <div className="hidden sm:flex flex-row justify-center rounded-md p-1 px-2 gap-4 backdrop-blur-sm shadow-sm shadow-white dark:shadow-black">
                 {movie.genre_ids.map((id) => (
                   <Genre key={id} id={id} />
                 ))}
@@ -102,14 +103,14 @@ const SliderSec = ({ movie }) => {
 
 const Overview = ({ movie }) => {
   return (
-    <div className="overviewscrollbar sm:m-0 z-10  sm:block bg-white/25  w-1/2 m-auto bottom-[10vw] xl:text-lg 2xl:text-2xl  p-4 rounded-md backdrop-blur-2xl text-justify overflow-auto max-h-[30vw] md:max-h-[20rem] sm:max-h-[20vw] shadow-2xl shadow-black">
-      <div className="flex sm:hidden flex-row justify-evenly rounded-md py-2   backdrop-blur-sm  max-w-full flex-wrap gap-y-2">
+    <div className="overviewscrollbar sm:m-0 z-10 text-sm  sm:block bg-white/40 dark:bg-black/40 dark:text-white text-slate-900  w-1/2 m-auto bottom-[10vw] xl:text-lg 2xl:text-2xl  p-4 rounded-md backdrop-blur-2xl text-pretty overflow-auto max-h-[30vw] md:max-h-[20rem] sm:max-h-[20vw] shadow-2xl shadow-black">
+      <div className="flex sm:hidden flex-row justify-evenly rounded-md py-2   backdrop-blur-sm  max-w-full flex-wrap gap-y-2 shadow-sm shadow-white dark:shadow-black mb-2">
         {movie.genre_ids.map((id) => (
           <Genre key={id} id={id} />
         ))}
       </div>
 
-      <p>{`${movie.overview}`}</p>
+      <p className="text-pretty">{`${movie.overview}`}</p>
     </div>
   );
 };

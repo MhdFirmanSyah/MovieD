@@ -30,7 +30,7 @@ const Section1 = ({ isOpen, setIsOpen, menues }) => {
             return (
               <li
                 key={list}
-                className="text-lg lg:text-2xl  lg:text-1xl items-center m-auto text-center justify-center place-content-center px-2 py-1 rounded-xl  content-center z-50"
+                className="text-lg lg:text-2xl  lg:text-1xl items-center m-auto text-center justify-center place-content-center px-2 py-1 rounded-xl  content-center z-50 before  hover:text-yellow-500 bg-red-50/10"
               >
                 {list}
               </li>

@@ -28,6 +28,29 @@ const SliderGlimmer = () => {
               Media
             </span>
           </div>
+          <div className="hidden sm:flex flex-row justify-center rounded-md p-1 px-2 gap-4  shimmer">
+            <span
+              className="bg-white/40  text-sm sm:text-md md:text-[1rem]  rounded-md px-1 md:px-2 md:py-1 "
+              // href={genre && genre.link}
+              target="blank"
+            >
+              Genre
+            </span>
+            <span
+              className="bg-white/40 text-sm sm:text-md md:text-[1rem]  rounded-md px-1 md:px-2 md:py-1 "
+              // href={genre && genre.link}
+              target="blank"
+            >
+              Genre
+            </span>
+            <span
+              className="bg-white/40 text-sm sm:text-md md:text-[1rem]  rounded-md px-1 md:px-2 md:py-1 "
+              // href={genre && genre.link}
+              target="blank"
+            >
+              Genre
+            </span>
+          </div>
 
           <span className="rating-bar side-about sm:hidden  shadow-none shimmer">
             Rating
@@ -47,7 +70,7 @@ const SliderGlimmer = () => {
                 readOnly
               />
             </Stack>
-            <span className="w-[20px] size-5 bg-white rounded-full  " />
+            <span className="w-[20px] size-5 bg-white/40 rounded-full  " />
           </div>
         </section>
       </div>

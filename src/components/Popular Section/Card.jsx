@@ -7,7 +7,7 @@ const Card = () => {
         alt=""
       />
       {/* <div className="absolute bottom-0 p-1 rounded-b-md backdrop-blur-sm m-2 left-0 right-0 bg-white/50 h-20"> */}
-      <h1 className="text-wrap block max-w-[5px] w-3 sm:max-w-[50%] md:max-w-[45%] ">
+      <h1 className="text-wrap flex  w-4 ">
         titfffffffffffffffffffdddddddddddddfffffffffffffle
       </h1>
       {/* </div> */}

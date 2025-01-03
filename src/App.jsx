@@ -14,9 +14,9 @@ function App() {
 
   useEffect(() => {
     try {
-      getDataTrending().then((res) => {
-        setTrending(res);
-        // console.log(res);
+      getDataTrending().then((result) => {
+        setTrending(result);
+        // console.log(result);
       });
     } catch (err) {
       console.log(err);

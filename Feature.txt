@@ -1,0 +1,31 @@
+trending =>{ https://api.themoviedb.org/3/trending/person/{time_window}
+all
+person
+movie
+tv
+}
+
+top rated =>{ https://api.themoviedb.org/3/movie/top_rated 
+movies
+tv series
+}
+
+upcoming - movies
+
+people/person - trending or top rated
+
+secmented ==>>{
+
+tv series =>{
+airing today
+on the air
+popular
+top rated
+}
+
+movies =>{
+now playing?
+popular
+top rated
+upcoming
+}}
