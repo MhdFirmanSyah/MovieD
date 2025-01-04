@@ -16,7 +16,7 @@ const Section1 = ({ isOpen, setIsOpen, menues }) => {
         <span className="humberger-long "></span>
       </span>
 
-      {/* logo */}
+      {/* logog */}
       <div className=" flex cursor-alias">
         <h1 className="bg-yellow-500 lg:mx-5 md:mx-2 my-3 py-1 px-3 rounded-lg  w-fit self-center font-bold sm:text-xl md:text-2xl lg:my-5 lg:text-2xl text-center">
           <span className="bg-black bg-clip-text">MovieD</span>
