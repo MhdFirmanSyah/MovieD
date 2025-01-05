@@ -28,4 +28,4 @@ now playing?
 popular
 top rated
 upcoming
-}}
+}}.
