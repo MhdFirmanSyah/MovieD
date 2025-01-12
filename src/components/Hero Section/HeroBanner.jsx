@@ -34,9 +34,9 @@ const HeroBanner = ({ trending }) => {
     <button
       className={`nav-button-slider ${
         direction === "prev"
-          ? "left-0 rounded-r-xl rounded-l-3xl"
-          : "right-0 rounded-l-xl rounded-r-3xl"
-      } hover:shadow-[13px_0_10px_-2px_rgba(255,255,255,1)] shadow-[13px_0_10px_-2px rgba(255,255,255,.5)] dark:hover:shadow-[13px_0_10px_-2px rgba(0,0,0,1)] dark:shadow-[13px_0_10px_-2px rgba(0,0,0,.5)]`}
+          ? "left-0 rounded-r-xl rounded-l-3xl dark:hover:shadow-[-13px_0_10px_-2px rgba(0,0,0,1)] hover:shadow-[-13px_0_10px_-2px_rgba(255,255,255,1)]  shadow-[-13px_0_10px_-2px rgba(255,255,255,.5)] dark:shadow-[-13px_0_10px_-2px rgba(0,0,0,.5)]"
+          : "right-0 rounded-l-xl rounded-r-3xl dark:hover:shadow-[13px_0_10px_-2px rgba(0,0,0,1)] hover:shadow-[13px_0_10px_-2px_rgba(255,255,255,1)]  shadow-[13px_0_10px_-2px rgba(255,255,255,.5)] dark:shadow-[13px_0_10px_-2px rgba(0,0,0,.5)]"
+      } `}
       onClick={onClick}
     >
       <img

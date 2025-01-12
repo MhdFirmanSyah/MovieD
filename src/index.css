@@ -69,7 +69,7 @@
     @apply drop-shadow-[2px_2px_5px_rgba(0,0,0,1)] dark:drop-shadow-[2px_2px_5px_rgba(255,255,255,1)] hover:before:w-5 hover:before:h-5 hover:bg-white before:z-50 z-50;
   }
   .nav-button-slider {
-    @apply cursor-pointer absolute h-16 w-10 color-base  z-40 mx-[3vw] top-[40%] bottom-[60%] flex items-center p-2 opacity-50 backdrop-brightness-100  hover:opacity-90 hover:scale-[1.05] hover:mx-[4vw] transition-all active:scale-[1];
+    @apply cursor-pointer absolute h-16 w-10 color-base  z-40 mx-[3vw] top-[40%] bottom-[60%] flex items-center p-2 opacity-50 backdrop-brightness-100  hover:opacity-90 hover:scale-[1.05] hover:mx-[3.5vw] transition-all active:scale-[1];
   }
   .open-rating {
     @apply before:w-6 before:h-6 before:shadow-[0_0_5px_rgba(255,255,255,1)] before:z-10 before:dark:bg-black before:bg-white before:absolute before:top-[-30px] before:rounded-t-full before:rounded-bl-full before:rotate-45 z-50;
