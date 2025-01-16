@@ -11,7 +11,7 @@
     src: url(./assets/fonts/MOVIPRG_.TTF) format("ttf");
   }
   .body {
-    @apply overflow-x-hidden;
+    @apply overflow-x-hidden text-black dark:text-white;
   }
   * {
     /* font-family: 'movieprg'; */
@@ -73,6 +73,15 @@
   }
   .open-rating {
     @apply before:w-6 before:h-6 before:shadow-[0_0_5px_rgba(255,255,255,1)] before:z-10 before:dark:bg-black before:bg-white before:absolute before:top-[-30px] before:rounded-t-full before:rounded-bl-full before:rotate-45 z-50;
+  }
+
+  .flexbox-title {
+    transition: 0.2s;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    @apply p-1;
   }
 }
 @layer utilities {
