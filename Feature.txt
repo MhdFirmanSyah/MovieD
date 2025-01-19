@@ -1,5 +1,3 @@
-new
-
 trending =>{ https://api.themoviedb.org/3/trending/person/{time_window}
 all
 person
